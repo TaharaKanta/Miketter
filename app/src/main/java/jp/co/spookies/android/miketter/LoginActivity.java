@@ -35,3 +35,34 @@ public class LoginActivity extends Activity {
 		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(authUrl));
 		startActivity(intent);
 	}
+
+	@Override
+	public void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		Uri uri = intent.getData();
+		if (uri != null && uri.toString().startsWith(CALLBACK_URI)) {
+			String verifier = uri.getQueryParameter("oauth_verifier");
+			if (verifier != null && verifier.length() > 0) {
+				saveToken(verifier);
+			}
+		}
+		finish();
+	}
+
+	private void saveToken(String oauthVerifier) {
+		try {
+			AccessToken accessToken = twitter.getOAuthAccessToken(requestToken,
+					oauthVerifier);
+			SharedPreferences pref = PreferenceManager
+					.getDefaultSharedPreferences(this);
+			SharedPreferences.Editor editor = pref.edit();
+			editor.putString(getString(R.string.preference_key_token),
+					accessToken.getToken());
+			editor.putString(getString(R.string.preference_key_token_secret),
+					accessToken.getTokenSecret());
+			editor.commit();
+		} catch (TwitterException e) {
+			e.printStackTrace();
+		}
+	}
+}
