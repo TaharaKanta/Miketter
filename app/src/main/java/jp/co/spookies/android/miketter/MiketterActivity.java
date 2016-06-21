@@ -69,3 +69,21 @@ public class MiketterActivity extends Activity {
 			showErrorDialog();
 		}
 	}
+
+	public void onMicButtonClicked(View arg0) {
+		startMic();
+	}
+
+	private void startMic() {
+		try {
+			Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+			intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+					RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+			intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+					R.string.title_mic_message);
+			startActivityForResult(intent, REQUEST_CODE_MIC);
+		} catch (ActivityNotFoundException e) {
+			showErrorDialog();
+		}
+
+	}
