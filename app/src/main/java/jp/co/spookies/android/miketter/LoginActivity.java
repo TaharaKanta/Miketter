@@ -11,11 +11,13 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * twitterのOAuth認証アクティビティ
  */
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity
+{
 	private static final String CALLBACK_URI = "miketter://callback";
 	private Twitter twitter = null;
 	private RequestToken requestToken = null;

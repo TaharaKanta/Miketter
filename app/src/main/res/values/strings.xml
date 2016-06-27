@@ -9,8 +9,8 @@
     <string name="error">えらー</string>
     <string name="consumer_key">XjH3DgCw0CJoHbZCUNJc5vMtT</string>
     <string name="consumer_secret">jfWNWUfjNRjdhZbBZL9LklhS2PcH8ne1Gmqc3pviI3frkVRR4a</string>
-    <string name="preference_key_token">token</string>
-    <string name="preference_key_token_secret">token_secret</string>
+    <string name="preference_key_token">1334618172-7Ago2ryqLNe7LhsJGW8rgcAckuCKw2MsL9Fjupc</string>
+    <string name="preference_key_token_secret">qWlOD0R28xrqU9xHuM8Ns6N3NSoUkBosJ3sGYEQHS1H9T</string>
     <string name="tweet_button_text">つぶやく</string>
     <string name="next_button_text">続けて入力</string>
 </resources>

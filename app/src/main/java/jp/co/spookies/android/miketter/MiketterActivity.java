@@ -35,6 +35,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.speech.RecognizerIntent;
+import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +47,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MiketterActivity extends Activity {
+public class MiketterActivity extends AppCompatActivity {
 	private final int REQUEST_CODE_MIC = 502;
 	private final int MIC_CAND_SIZE = 5;
 	private Twitter twitter = new TwitterFactory().getInstance();
